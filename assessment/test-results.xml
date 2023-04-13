@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="48.856" tests="11" failures="11">
+  <testsuite name="Root Suite" timestamp="2023-04-13T12:56:11" tests="0" file="specs/apiSpec.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Search" timestamp="2023-04-13T12:56:11" tests="11" time="48.704" failures="11">
+    <testcase name="Search POST /v1/videos - Verify expected fields are present in response on uploading videos" time="0.000" classname="POST /v1/videos - Verify expected fields are present in response on uploading videos">
+      <failure message="`cy.request()` failed on:
+
+http://localhost:8082/v1/videos
+
+The response we received from your web server was:
+
+  &gt; 422: Unprocessable Entity
+
+This was considered a failure because the status code was not `2xx` or `3xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
+
+-----------------------------------------------------------
+
+The request we sent was:
+
+Method: POST
+URL: http://localhost:8082/v1/videos
+Headers: {
+  &quot;Connection&quot;: &quot;keep-alive&quot;,
+  &quot;user-agent&quot;: &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.4.0 Chrome/94.0.4606.81 Electron/15.3.4 Safari/537.36&quot;,
+  &quot;accept&quot;: &quot;*/*&quot;,
+  &quot;accept-encoding&quot;: &quot;gzip, deflate&quot;,
+  &quot;content-type&quot;: &quot;application/json&quot;,
+  &quot;content-length&quot;: 229
+}
+Body: {&quot;videoLink&quot;:&quot;https://www.youtube.com/embed/vXz81_o7CSk&quot;,&quot;title&quot;:&quot;Consumed by the Apocalypse&quot;,&quot;genre&quot;:&quot;Education&quot;,&quot;contentRating&quot;:&quot;12+&quot;,&quot;releaseDate&quot;:&quot;3 Mar 2019&quot;,&quot;previewImage&quot;:&quot;https://i.ytimg.com/vi/nx2-4l4s4Nw/mqdefault.jpg&quot;}
+
+-----------------------------------------------------------
+
+The response we got was:
+
+Status: 422 - Unprocessable Entity
+Headers: {
+  &quot;x-powered-by&quot;: &quot;Express&quot;,
+  &quot;content-type&quot;: &quot;application/json; charset=utf-8&quot;,
+  &quot;content-length&quot;: &quot;34&quot;,
+  &quot;etag&quot;: &quot;W/\&quot;22-v73XXVbPmYHZP7L191GvQjV/uYg\&quot;&quot;,
+  &quot;date&quot;: &quot;Thu, 13 Apr 2023 12:56:11 GMT&quot;,
+  &quot;connection&quot;: &quot;keep-alive&quot;,
+  &quot;keep-alive&quot;: &quot;timeout=5&quot;
+}
+Body: {
+  &quot;message&quot;: &quot;Invalid Input Passed&quot;
+}
+
+
+https://on.cypress.io/request" type="CypressError"><![CDATA[CypressError: `cy.request()` failed on:
+
+http://localhost:8082/v1/videos
+
+The response we received from your web server was:
+
+  > 422: Unprocessable Entity
+
+This was considered a failure because the status code was not `2xx` or `3xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
+
+-----------------------------------------------------------
+
+The request we sent was:
+
+Method: POST
+URL: http://localhost:8082/v1/videos
+Headers: {
+  "Connection": "keep-alive",
+  "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.4.0 Chrome/94.0.4606.81 Electron/15.3.4 Safari/537.36",
+  "accept": "*/*",
+  "accept-encoding": "gzip, deflate",
+  "content-type": "application/json",
+  "content-length": 229
+}
+Body: {"videoLink":"https://www.youtube.com/embed/vXz81_o7CSk","title":"Consumed by the Apocalypse","genre":"Education","contentRating":"12+","releaseDate":"3 Mar 2019","previewImage":"https://i.ytimg.com/vi/nx2-4l4s4Nw/mqdefault.jpg"}
+
+-----------------------------------------------------------
+
+The response we got was:
+
+Status: 422 - Unprocessable Entity
+Headers: {
+  "x-powered-by": "Express",
+  "content-type": "application/json; charset=utf-8",
+  "content-length": "34",
+  "etag": "W/\"22-v73XXVbPmYHZP7L191GvQjV/uYg\"",
+  "date": "Thu, 13 Apr 2023 12:56:11 GMT",
+  "connection": "keep-alive",
+  "keep-alive": "timeout=5"
+}
+Body: {
+  "message": "Invalid Input Passed"
+}
+
+
+https://on.cypress.io/request
+    at http://localhost:8082/__cypress/runner/cypress_runner.js:160569:80
+    at tryCatcher (http://localhost:8082/__cypress/runner/cypress_runner.js:13196:23)
+    at Promise._settlePromiseFromHandler (http://localhost:8082/__cypress/runner/cypress_runner.js:11131:31)
+    at Promise._settlePromise (http://localhost:8082/__cypress/runner/cypress_runner.js:11188:18)
+    at Promise._settlePromise0 (http://localhost:8082/__cypress/runner/cypress_runner.js:11233:10)
+    at Promise._settlePromises (http://localhost:8082/__cypress/runner/cypress_runner.js:11313:18)
+    at _drainQueueStep (http://localhost:8082/__cypress/runner/cypress_runner.js:7903:12)
+    at _drainQueue (http://localhost:8082/__cypress/runner/cypress_runner.js:7896:9)
+    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:8082/__cypress/runner/cypress_runner.js:7912:5)
+    at Async.drainQueues (http://localhost:8082/__cypress/runner/cypress_runner.js:7782:14)
+From Your Spec Code:
+    at Object.uploadNewVideo (http://localhost:8082/__cypress/tests?p=specs/apiSpec.js:171:15)
+    at eval (http://localhost:8082/__cypress/tests?p=specs/apiSpec.js:282:37)
+    at Context.eval (http://localhost:8082/__cypress/tests?p=specs/apiSpec.js:281:20)]]></failure>
+    </testcase>
+    <testcase name="Search GET /v1/videos - Verify all videos were uploaded" time="0.000" classname="GET /v1/videos - Verify all videos were uploaded">
+      <failure message="Timed out retrying after 4000ms: expected [] to have a length at least 15 but got 0" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: expected [] to have a length at least 15 but got 0
+    at Context.eval (http://localhost:8082/__cypress/tests?p=specs/apiSpec.js:291:33)
+
+      + expected - actual:  failed to generate Mocha diff
+]]></failure>
+    </testcase>
+    <testcase name="Search GET /v1/videos?title=video18 - Verify only 1 video with title &apos;video18&apos; exists and has its genre as Education" time="0.000" classname="GET /v1/videos?title=video18 - Verify only 1 video with title &apos;video18&apos; exists and has its genre as Education">
+      <failure message="Timed out retrying after 4000ms: expected [] to have a length of 1 but got 0" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: expected [] to have a length of 1 but got 0
+    at Context.eval (http://localhost:8082/__cypress/tests?p=specs/apiSpec.js:296:33)
+
+      + expected - actual:  failed to generate Mocha diff
+]]></failure>
+    </testcase>
+    <testcase name="Search GET /v1/videos?genres=Sports - Verify exactly 2 videos are available for Sports genre" time="0.000" classname="GET /v1/videos?genres=Sports - Verify exactly 2 videos are available for Sports genre">
+      <failure message="Timed out retrying after 4000ms: expected [] to have a length of 2 but got 0" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: expected [] to have a length of 2 but got 0
+    at Context.eval (http://localhost:8082/__cypress/tests?p=specs/apiSpec.js:302:33)
+
+      + expected - actual:  failed to generate Mocha diff
+]]></failure>
+    </testcase>
+    <testcase name="Search GET /v1/videos?genres=Sports,Lifestyle - Verify exactly 4 videos are available for Sports/Lifestyle genres" time="0.000" classname="GET /v1/videos?genres=Sports,Lifestyle - Verify exactly 4 videos are available for Sports/Lifestyle genres">
+      <failure message="Timed out retrying after 4000ms: expected [] to have a length of 4 but got 0" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: expected [] to have a length of 4 but got 0
+    at Context.eval (http://localhost:8082/__cypress/tests?p=specs/apiSpec.js:308:33)
+
+      + expected - actual:  failed to generate Mocha diff
+]]></failure>
+    </testcase>
+    <testcase name="Search GET /v1/videos?contentRating=18%2B - Verify videos are returned with contentRating set as 18+" time="0.000" classname="GET /v1/videos?contentRating=18%2B - Verify videos are returned with contentRating set as 18+">
+      <failure message="Timed out retrying after 4000ms: expected [] to have a length of 1 but got 0" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: expected [] to have a length of 1 but got 0
+    at Context.eval (http://localhost:8082/__cypress/tests?p=specs/apiSpec.js:314:33)
+
+      + expected - actual:  failed to generate Mocha diff
+]]></failure>
+    </testcase>
+    <testcase name="Search GET /v1/videos?title=consumed&amp;genres=Sports,Lifestyle&amp;contentRating=12%2B - Verify exactly 4 videos are available" time="0.000" classname="GET /v1/videos?title=consumed&amp;genres=Sports,Lifestyle&amp;contentRating=12%2B - Verify exactly 4 videos are available">
+      <failure message="Timed out retrying after 4000ms: expected [] to have a length of 3 but got 0" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: expected [] to have a length of 3 but got 0
+    at Context.eval (http://localhost:8082/__cypress/tests?p=specs/apiSpec.js:320:33)
+
+      + expected - actual:  failed to generate Mocha diff
+]]></failure>
+    </testcase>
+    <testcase name="Search GET /v1/videos?sortBy=releaseDate - Verify that video with title First-Video comes first when sorted by releaseDate " time="0.000" classname="GET /v1/videos?sortBy=releaseDate - Verify that video with title First-Video comes first when sorted by releaseDate ">
+      <failure message="Timed out retrying after 4000ms: `cy.its()` errored because the property: `0` does not exist on your subject.
+
+`cy.its()` waited for the specified property `0` to exist, but it never did.
+
+If you do not expect the property `0` to exist, then add an assertion such as:
+
+`cy.wrap({ foo: &apos;bar&apos; }).its(&apos;quux&apos;).should(&apos;not.exist&apos;)`
+
+https://on.cypress.io/its" type="CypressError"><![CDATA[CypressError: Timed out retrying after 4000ms: `cy.its()` errored because the property: `0` does not exist on your subject.
+
+`cy.its()` waited for the specified property `0` to exist, but it never did.
+
+If you do not expect the property `0` to exist, then add an assertion such as:
+
+`cy.wrap({ foo: 'bar' }).its('quux').should('not.exist')`
+
+https://on.cypress.io/its
+    at cypressErr (http://localhost:8082/__cypress/runner/cypress_runner.js:176224:18)
+    at Object.cypressErrByPath (http://localhost:8082/__cypress/runner/cypress_runner.js:176230:10)
+    at propertyNotOnSubjectErr (http://localhost:8082/__cypress/runner/cypress_runner.js:156430:83)
+    at traverseObjectAtPath (http://localhost:8082/__cypress/runner/cypress_runner.js:156517:24)
+    at getValue (http://localhost:8082/__cypress/runner/cypress_runner.js:156571:11)
+    at tryCatcher (http://localhost:8082/__cypress/runner/cypress_runner.js:13196:23)
+    at Function.Promise.attempt.Promise.try (http://localhost:8082/__cypress/runner/cypress_runner.js:10470:29)
+    at retryValue (http://localhost:8082/__cypress/runner/cypress_runner.js:156611:65)
+    at tryCatcher (http://localhost:8082/__cypress/runner/cypress_runner.js:13196:23)
+    at Function.Promise.attempt.Promise.try (http://localhost:8082/__cypress/runner/cypress_runner.js:10470:29)
+    at resolveValue (http://localhost:8082/__cypress/runner/cypress_runner.js:156618:65)
+    at tryCatcher (http://localhost:8082/__cypress/runner/cypress_runner.js:13196:23)
+    at Function.Promise.attempt.Promise.try (http://localhost:8082/__cypress/runner/cypress_runner.js:10470:29)
+    at whenStable (http://localhost:8082/__cypress/runner/cypress_runner.js:168695:63)
+    at http://localhost:8082/__cypress/runner/cypress_runner.js:168192:14
+    at tryCatcher (http://localhost:8082/__cypress/runner/cypress_runner.js:13196:23)
+From Your Spec Code:
+    at Context.eval (http://localhost:8082/__cypress/tests?p=specs/apiSpec.js:326:33)]]></failure>
+    </testcase>
+    <testcase name="Search PATCH /v1/videos/:videoId/votes - Verify upvote feature works" time="0.000" classname="PATCH /v1/videos/:videoId/votes - Verify upvote feature works">
+      <failure message="Timed out retrying after 4000ms: `cy.its()` errored because the property: `1` does not exist on your subject.
+
+`cy.its()` waited for the specified property `1` to exist, but it never did.
+
+If you do not expect the property `1` to exist, then add an assertion such as:
+
+`cy.wrap({ foo: &apos;bar&apos; }).its(&apos;quux&apos;).should(&apos;not.exist&apos;)`
+
+https://on.cypress.io/its" type="CypressError"><![CDATA[CypressError: Timed out retrying after 4000ms: `cy.its()` errored because the property: `1` does not exist on your subject.
+
+`cy.its()` waited for the specified property `1` to exist, but it never did.
+
+If you do not expect the property `1` to exist, then add an assertion such as:
+
+`cy.wrap({ foo: 'bar' }).its('quux').should('not.exist')`
+
+https://on.cypress.io/its
+    at cypressErr (http://localhost:8082/__cypress/runner/cypress_runner.js:176224:18)
+    at Object.cypressErrByPath (http://localhost:8082/__cypress/runner/cypress_runner.js:176230:10)
+    at propertyNotOnSubjectErr (http://localhost:8082/__cypress/runner/cypress_runner.js:156430:83)
+    at traverseObjectAtPath (http://localhost:8082/__cypress/runner/cypress_runner.js:156517:24)
+    at getValue (http://localhost:8082/__cypress/runner/cypress_runner.js:156571:11)
+    at tryCatcher (http://localhost:8082/__cypress/runner/cypress_runner.js:13196:23)
+    at Function.Promise.attempt.Promise.try (http://localhost:8082/__cypress/runner/cypress_runner.js:10470:29)
+    at retryValue (http://localhost:8082/__cypress/runner/cypress_runner.js:156611:65)
+    at tryCatcher (http://localhost:8082/__cypress/runner/cypress_runner.js:13196:23)
+    at Function.Promise.attempt.Promise.try (http://localhost:8082/__cypress/runner/cypress_runner.js:10470:29)
+    at resolveValue (http://localhost:8082/__cypress/runner/cypress_runner.js:156618:65)
+    at tryCatcher (http://localhost:8082/__cypress/runner/cypress_runner.js:13196:23)
+    at Function.Promise.attempt.Promise.try (http://localhost:8082/__cypress/runner/cypress_runner.js:10470:29)
+    at whenStable (http://localhost:8082/__cypress/runner/cypress_runner.js:168695:63)
+    at http://localhost:8082/__cypress/runner/cypress_runner.js:168192:14
+    at tryCatcher (http://localhost:8082/__cypress/runner/cypress_runner.js:13196:23)
+From Your Spec Code:
+    at Context.eval (http://localhost:8082/__cypress/tests?p=specs/apiSpec.js:332:33)]]></failure>
+    </testcase>
+    <testcase name="Search PATCH /v1/videos/:videoId/votes - Verify downvote feature works" time="0.000" classname="PATCH /v1/videos/:videoId/votes - Verify downvote feature works">
+      <failure message="Timed out retrying after 4000ms: `cy.its()` errored because the property: `1` does not exist on your subject.
+
+`cy.its()` waited for the specified property `1` to exist, but it never did.
+
+If you do not expect the property `1` to exist, then add an assertion such as:
+
+`cy.wrap({ foo: &apos;bar&apos; }).its(&apos;quux&apos;).should(&apos;not.exist&apos;)`
+
+https://on.cypress.io/its" type="CypressError"><![CDATA[CypressError: Timed out retrying after 4000ms: `cy.its()` errored because the property: `1` does not exist on your subject.
+
+`cy.its()` waited for the specified property `1` to exist, but it never did.
+
+If you do not expect the property `1` to exist, then add an assertion such as:
+
+`cy.wrap({ foo: 'bar' }).its('quux').should('not.exist')`
+
+https://on.cypress.io/its
+    at cypressErr (http://localhost:8082/__cypress/runner/cypress_runner.js:176224:18)
+    at Object.cypressErrByPath (http://localhost:8082/__cypress/runner/cypress_runner.js:176230:10)
+    at propertyNotOnSubjectErr (http://localhost:8082/__cypress/runner/cypress_runner.js:156430:83)
+    at traverseObjectAtPath (http://localhost:8082/__cypress/runner/cypress_runner.js:156517:24)
+    at getValue (http://localhost:8082/__cypress/runner/cypress_runner.js:156571:11)
+    at tryCatcher (http://localhost:8082/__cypress/runner/cypress_runner.js:13196:23)
+    at Function.Promise.attempt.Promise.try (http://localhost:8082/__cypress/runner/cypress_runner.js:10470:29)
+    at retryValue (http://localhost:8082/__cypress/runner/cypress_runner.js:156611:65)
+    at tryCatcher (http://localhost:8082/__cypress/runner/cypress_runner.js:13196:23)
+    at Function.Promise.attempt.Promise.try (http://localhost:8082/__cypress/runner/cypress_runner.js:10470:29)
+    at resolveValue (http://localhost:8082/__cypress/runner/cypress_runner.js:156618:65)
+    at tryCatcher (http://localhost:8082/__cypress/runner/cypress_runner.js:13196:23)
+    at Function.Promise.attempt.Promise.try (http://localhost:8082/__cypress/runner/cypress_runner.js:10470:29)
+    at whenStable (http://localhost:8082/__cypress/runner/cypress_runner.js:168695:63)
+    at http://localhost:8082/__cypress/runner/cypress_runner.js:168192:14
+    at tryCatcher (http://localhost:8082/__cypress/runner/cypress_runner.js:13196:23)
+From Your Spec Code:
+    at Context.eval (http://localhost:8082/__cypress/tests?p=specs/apiSpec.js:341:33)]]></failure>
+    </testcase>
+    <testcase name="Search PATCH /v1/videos/:videoId/views - Verify view count is increased" time="0.000" classname="PATCH /v1/videos/:videoId/views - Verify view count is increased">
+      <failure message="Timed out retrying after 4000ms: `cy.its()` errored because the property: `1` does not exist on your subject.
+
+`cy.its()` waited for the specified property `1` to exist, but it never did.
+
+If you do not expect the property `1` to exist, then add an assertion such as:
+
+`cy.wrap({ foo: &apos;bar&apos; }).its(&apos;quux&apos;).should(&apos;not.exist&apos;)`
+
+https://on.cypress.io/its" type="CypressError"><![CDATA[CypressError: Timed out retrying after 4000ms: `cy.its()` errored because the property: `1` does not exist on your subject.
+
+`cy.its()` waited for the specified property `1` to exist, but it never did.
+
+If you do not expect the property `1` to exist, then add an assertion such as:
+
+`cy.wrap({ foo: 'bar' }).its('quux').should('not.exist')`
+
+https://on.cypress.io/its
+    at cypressErr (http://localhost:8082/__cypress/runner/cypress_runner.js:176224:18)
+    at Object.cypressErrByPath (http://localhost:8082/__cypress/runner/cypress_runner.js:176230:10)
+    at propertyNotOnSubjectErr (http://localhost:8082/__cypress/runner/cypress_runner.js:156430:83)
+    at traverseObjectAtPath (http://localhost:8082/__cypress/runner/cypress_runner.js:156517:24)
+    at getValue (http://localhost:8082/__cypress/runner/cypress_runner.js:156571:11)
+    at tryCatcher (http://localhost:8082/__cypress/runner/cypress_runner.js:13196:23)
+    at Function.Promise.attempt.Promise.try (http://localhost:8082/__cypress/runner/cypress_runner.js:10470:29)
+    at retryValue (http://localhost:8082/__cypress/runner/cypress_runner.js:156611:65)
+    at tryCatcher (http://localhost:8082/__cypress/runner/cypress_runner.js:13196:23)
+    at Function.Promise.attempt.Promise.try (http://localhost:8082/__cypress/runner/cypress_runner.js:10470:29)
+    at resolveValue (http://localhost:8082/__cypress/runner/cypress_runner.js:156618:65)
+    at tryCatcher (http://localhost:8082/__cypress/runner/cypress_runner.js:13196:23)
+    at Function.Promise.attempt.Promise.try (http://localhost:8082/__cypress/runner/cypress_runner.js:10470:29)
+    at whenStable (http://localhost:8082/__cypress/runner/cypress_runner.js:168695:63)
+    at http://localhost:8082/__cypress/runner/cypress_runner.js:168192:14
+    at tryCatcher (http://localhost:8082/__cypress/runner/cypress_runner.js:13196:23)
+From Your Spec Code:
+    at Context.eval (http://localhost:8082/__cypress/tests?p=specs/apiSpec.js:350:33)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

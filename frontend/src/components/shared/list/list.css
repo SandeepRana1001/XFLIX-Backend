@@ -1,0 +1,9 @@
+.list-group a{
+    background-color: rgba(30, 28, 28,0.6);
+    color:rgb(191, 186, 186);
+}
+
+.list-group a:hover, .list-group a:focus{
+    background-color: rgba(30, 28, 28,0.2);
+    color:white
+}
