@@ -9,9 +9,11 @@ const routes = require('./routes/v1/index')
 const errorHandler = require('./middleware/errorHandler')
 const ApiError = require('./utils/APIError')
 const cors = require("cors");
-// const helmet = require("helmet");
+const helmet = require("helmet");
 
 const httpStatus = require('http-status')
+
+app.use(helmet());
 
 app.use(express.json());
 app.use(express.urlencoded({
@@ -21,7 +23,6 @@ app.use(express.urlencoded({
 // enable cors
 app.use(cors());
 app.options("*", cors());
-// app.use(helmet());
 
 app.use('/v1', routes)
 
