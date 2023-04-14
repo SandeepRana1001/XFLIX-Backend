@@ -8,17 +8,18 @@ const config = require('./config/config')
 const app = require('./app')
 
 mongoose.connect(config.MONGO_URI, config.MONGO_OPTIONS)
-.then(()=>{
-    console.log('Connected Successfully to Mongo DB')
-    try{        
-        app.listen(config.PORT)
-        console.log('Server Listening on PORT : '+config.PORT)
-    }catch(err){
-        console.log('Connection Failed')
+    .then(() => {
+        console.log('Connected Successfully to Mongo DB')
+        try {
+            app.listen(config.PORT)
+            console.log('Server Listening on PORT : ' + config.PORT)
+        } catch (err) {
+            console.log(err)
+            console.log('Connection Failed')
+            console.log(err)
+        }
+    }).catch((err) => {
+        console.log('Cannot Connect To Mongo')
         console.log(err)
-    }
-}).catch((err)=>{
-    console.log('Cannot Connect To Mongo')
-    console.log(err)
-})
+    })
 

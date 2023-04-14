@@ -2,12 +2,12 @@ const dotenv = require('dotenv')
 
 dotenv.config()
 
-const PORT = process.env.NODE_ENV
+const PORT = process.env.PORT
 const MONGO_URI = process.env.MONGO_URI
 
 const MONGO_OPTIONS = {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
 }
 
 
