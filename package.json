@@ -13,6 +13,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "express-validator": "^6.15.0",
+    "helmet": "^6.1.5",
     "http-status": "^1.6.2",
     "mongoose": "^7.0.3"
   },

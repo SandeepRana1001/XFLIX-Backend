@@ -9,6 +9,7 @@ const routes = require('./routes/v1/index')
 const errorHandler = require('./middleware/errorHandler')
 const ApiError = require('./utils/APIError')
 const cors = require("cors");
+const helmet = require("helmet");
 
 const httpStatus = require('http-status')
 
@@ -20,14 +21,15 @@ app.use(express.urlencoded({
 // enable cors
 app.use(cors());
 app.options("*", cors());
+app.use(helmet());
 
-app.use('/v1',routes)
+app.use('/v1', routes)
 
 
 
 // send back a 404 error for any unknown api request
 app.use((req, res, next) => {
-   throw new ApiError(httpStatus.NOT_FOUND, "Not found");
+  throw new ApiError(httpStatus.NOT_FOUND, "Not found");
 });
 
 app.use(errorHandler)
