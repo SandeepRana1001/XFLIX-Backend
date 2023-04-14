@@ -10,9 +10,9 @@ const errorHandler = require('./middleware/errorHandler')
 const ApiError = require('./utils/APIError')
 const cors = require("cors");
 const helmet = require("helmet");
-
 const httpStatus = require('http-status')
 
+// set security HTTP headers - https://helmetjs.github.io/
 app.use(helmet());
 
 app.use(express.json());
